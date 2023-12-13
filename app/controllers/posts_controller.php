@@ -53,6 +53,10 @@ class PostsController extends AppController {
         }
     }
 
+    public function view_all() {
+        $this->set('posts', $this->Post->find('all', array('contain' => 'Comment')));
+    }
+
     // function search() {
     //     if ($this->params['form']) {
     //         $searchTerm = $this->params['form']['srch'];
