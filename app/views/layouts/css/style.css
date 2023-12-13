@@ -1,0 +1,26 @@
+.input.text,
+.input.password,
+.input.email,
+.input.tel,
+.input.number,
+.input.date,
+.input.select,
+.input.checkbox,
+.input.radio,
+.input.submit {
+    /* Your styles for text, password, email, tel, number, date, select, checkbox, radio, submit */
+    margin-bottom: 10px;
+}
+
+/* Style labels */
+.input label {
+    font-weight: bold;
+    /* Your label styles */
+}
+
+/* Style error messages */
+.error-message {
+    color: red;
+    font-size: 12px;
+    /* Your error message styles */
+}
