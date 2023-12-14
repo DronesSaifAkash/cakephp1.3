@@ -5,10 +5,12 @@ class Post extends AppModel {
     public $hasMany = array('Comment');
     var $validate = array(
         'title' => array(
-            'rule' => 'notEmpty'
+            'rule' => 'notEmpty',
+            'message' => 'Title cannot be empty'
         ),
         'body' => array(
-            'rule' => 'notEmpty'
+            'rule' => 'notEmpty',
+            'message' => 'Body cannot be empty'
         )
     );
 }

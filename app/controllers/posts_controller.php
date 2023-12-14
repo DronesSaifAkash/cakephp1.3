@@ -27,9 +27,14 @@ class PostsController extends AppController {
 
     function add() {
         if (!empty($this->data)) {
-            if ($this->Post->save($this->data)) {
-                $this->Session->setFlash('Your post has been saved.');
-                $this->redirect(array('action' => 'index'));
+            if ($this->Post->validates()) {
+                if ($this->Post->save($this->data)) {
+                    $this->Session->setFlash('Your post has been saved.');
+                    $this->redirect(array('action' => 'index'));
+                }
+            } else {
+                // The data is not valid, errors are in $this->Post->validationErrors
+                $this->Session->setFlash('Validation errors occurred');
             }
         }
     }
