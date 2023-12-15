@@ -12,5 +12,14 @@ class CommentsController extends AppController {
         $this->set('comments', $this->Comment->find('all'));
     }
 
+    public function add_comments(){
+        if (!empty($this->data)) {
+            if ($this->Comment->save($this->data)) {
+                $this->Session->setFlash('Your comment has been saved.');
+                $this->redirect(array('controller' => 'posts', 'action' => 'view_all'));
+            }
+        }
+    }
+
 }
 ?>
