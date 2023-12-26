@@ -15,6 +15,7 @@ class PostsController extends AppController {
                 )
             ));
             $this->set('posts', $posts);
+            $this->set('defaultSearchValue', $searchTerm);
         }else{
             $this->set('posts', $this->Post->find('all'));
         }

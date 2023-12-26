@@ -24,7 +24,7 @@
 <body>
 <div id="page">
 	
-	<div id="menu mb-3">
+	<div id="menu">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Cakephp1.3</a>
@@ -34,7 +34,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-lg-0">
                     <li class="nav-item">
                         <?php echo $this->Html->link('Home', '/posts', array('class' => 'nav-link active')); ?>
                     </li>
@@ -48,9 +48,9 @@
                     </li>
                 </ul>
                 <?php 
-                    echo $this->Form->create('Posts', array('action' => 'index', 'class'=>'mb-3 d-flex ' )); 
-                    echo $this->Form->input('Search', array( 'name'=>'srch' , 'class'=> 'form-control me-2', 'label' => false )); 
-                    echo $this->Form->submit('Search',array('class'=>'btn  btn-outline-success mx-2')); 
+                    echo $this->Form->create('Posts', array('action' => 'index', 'class'=>'d-flex')); 
+                    echo $this->Form->input('Search', array( 'name'=>'srch' , 'class'=> 'form-control me-2 mt-2', 'label' => false, 'value' => @$defaultSearchValue )); 
+                    echo $this->Form->submit('Search',array('class'=>'btn  btn-outline-success mx-2 mt-2')); 
                     echo $this->Form->end(); 
                 ?>
             </div>
@@ -58,10 +58,10 @@
     </nav>
     </div>
 	<?php
-                echo $content_for_layout;
-                ?>
+    echo $content_for_layout;
+    ?>
 	<div class="footer-border"></div>
-	<div align="left" style="color:#ccc">&copy; Global Vision Bunkers all rights reserved</div>
+	<div align="left" style="color:#ccc">&copy; Cakephp Practice all rights reserved</div>
 </div>
 </body>
 </html>
