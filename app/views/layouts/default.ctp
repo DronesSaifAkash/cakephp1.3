@@ -24,33 +24,37 @@
 <body>
 <div id="page">
 	
-	<div id="menu">
+	<div id="menu mb-3">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Cakephp1.3</a>
+            <a class="navbar-brand" href="#"><img src="https://cakephp.org/img/cake-logo.svg" class="img-fluid bg-danger border p-2"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <?php echo $this->Html->link('Home', '/posts', array('class' => 'nav-link active')); ?>
                     </li>
                     <li class="nav-item">
-                        <!-- <a class="nav-link" href="#">Link</a> -->
                         <?php echo $this->Html->link("Add Post", array('action' => 'add'),array( 'class' => 'nav-link')); ?>
                     </li>
                     <li class="nav-item">
-                        <!-- <a class="nav-link" href="#">Link</a> -->
                         <?php echo $this->Html->link("View All", array('action' => '/view_all'),array( 'class' => 'nav-link')); ?>
+                    </li>
+                    <li class="nav-item">
+                        <?php echo $this->Html->link("Admissions", '/admissions', array( 'class' => 'nav-link')); ?>
+                    </li>
+                    <li class="nav-item">
+                        <?php echo $this->Html->link("Form", '/admissions/form', array( 'class' => 'nav-link')); ?>
                     </li>
                 </ul>
                 <?php 
-                    echo $this->Form->create('Posts', array('action' => 'index', 'class'=>'d-flex')); 
-                    echo $this->Form->input('Search', array( 'name'=>'srch' , 'class'=> 'form-control me-2 mt-2', 'label' => false, 'value' => @$defaultSearchValue )); 
-                    echo $this->Form->submit('Search',array('class'=>'btn  btn-outline-success mx-2 mt-2')); 
+                    echo $this->Form->create('Posts', array('action' => 'index', 'class'=>'mb-3 d-flex ' )); 
+                    echo $this->Form->input('Search', array( 'name'=>'srch' , 'class'=> 'form-control me-2', 'label' => false )); 
+                    echo $this->Form->submit('Search',array('class'=>'btn  btn-outline-success mx-2')); 
                     echo $this->Form->end(); 
                 ?>
             </div>
@@ -58,10 +62,10 @@
     </nav>
     </div>
 	<?php
-    echo $content_for_layout;
-    ?>
+                echo $content_for_layout;
+                ?>
 	<div class="footer-border"></div>
-	<div align="left" style="color:#ccc">&copy; Cakephp Practice all rights reserved</div>
+	<div align="left" style="color:#ccc">&copy; Global Vision Bunkers all rights reserved</div>
 </div>
 </body>
 </html>
